@@ -1,5 +1,7 @@
 # 1c_server1
+
 https://renbuar.blogspot.com/2018/11/docker-1-2-ubuntu-1404.html
+
 $ cd cd ~/  
 $ git clone https://github.com/renbuar/1c_server1.git
 $ cd ~/1c_server1/
