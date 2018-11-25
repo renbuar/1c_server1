@@ -19,7 +19,7 @@ $ cp ~/test/haspd-modules_7.60-eter1ubuntu_amd64.deb ~/1c_server1/8.3.14-1373
 
 $ docker build --tag 1c-server1 .
 
-$ docker volume create --name 1c-server 
+$ docker volume create --name 1c-server1 
 
 Запуск тестовый
 
@@ -30,11 +30,3 @@ $ docker run -ti -h u1604 --name 1c-server-1 --rm  --privileged -p 1540:1540 -p 
 
 $ docker run -d -h u1604 --name 1c-server-1 --rm  --privileged -p 1540:1540 -p 1541:1541 -p 1560-1591:1560-1591 -p 475:475 -p1947:1947 -v 1c-server1:/home/usr1cv8 1c-server1:latest
 
-
-Затем создав базу останавливать  :
-
-$ docker stop 1c-server1
-
-При необходимости запускать сноваа:
-
-$ docker start 1c-server1
