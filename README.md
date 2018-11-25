@@ -7,23 +7,24 @@ $ cd cd ~/
 
 $ git clone https://github.com/renbuar/1c_server1.git
 
-$ cd ~/1c_server1/
+$ cd ~/1c_server1/8.3.14-1373
 
-$ cp ~/test/1c-enterprise83-common_8.3.14-1373_amd64.deb ~/1c_server1/
+$ cp ~/test/1c-enterprise83-common_8.3.14-1373_amd64.deb ~/1c_server1/8.3.14-1373
 
-$ cp ~/test/1c-enterprise83-server_8.3.14-1373_amd64.deb ~/1c_server1/
+$ cp ~/test/1c-enterprise83-server_8.3.14-1373_amd64.deb ~/1c_server1/8.3.14-1373
 
-$ cp ~/test/haspd_7.60-eter1ubuntu_amd64.deb ~/1c_server1/
+$ cp ~/test/haspd_7.60-eter1ubuntu_amd64.deb ~/1c_server1/8.3.14-1373
 
-$ cp ~/test/haspd-modules_7.60-eter1ubuntu_amd64.deb ~/1c_server1/
+$ cp ~/test/haspd-modules_7.60-eter1ubuntu_amd64.deb ~/1c_server1/8.3.14-1373
 
 $ docker build --tag 1c-server1 .
+
+$ docker volume create --name 1c-server 
 
 Запуск тестовый
 
 $ docker run -ti -h u1604 --name 1c-server-1 --rm  --privileged -p 1540:1540 -p 1541:1541 -p 1560-1591:1560-1591 -p 475:475 -p1947:1947 -v 1c-server1:/home/usr1cv8 1c-server1:latest
 
- 
 
 Запуск разовый
 
