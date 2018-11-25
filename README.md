@@ -1,4 +1,5 @@
 # 1c_server1
+1 сервер
 
 https://renbuar.blogspot.com/2018/11/docker-1-2-ubuntu-1404.html
 
@@ -12,13 +13,17 @@ $ cp ~/test/haspd-modules_7.60-eter1ubuntu_amd64.deb ~/1c_server1/
 
 $ docker build --tag 1c-server1 .
 
-Запуск разово
-$ docker run -d --name 1c-server1 --rm --net=host --privileged 1c-server1:latest
+Запуск тестовый
 
-При каждом создании контейнера нужно пересоздавать  базу.
-Что бы не не пересоздавать можно так:
+$ docker run -ti -h u1604 --name 1c-server-1 --rm  --privileged -p 1540:1540 -p 1541:1541 -p 1560-1591:1560-1591 -p 475:475 -p1947:1947 -v 1c-server1:/home/usr1cv8 1c-server1:latest
 
-$ docker run -d --name 1c-server1 --net=host --privileged 1c-server1:latest
+ 
+
+Запуск разовый
+
+$ docker run -d -h u1604 --name 1c-server-1 --rm  --privileged -p 1540:1540 -p 1541:1541 -p 1560-1591:1560-1591 -p 475:475 -p1947:1947 -v 1c-server1:/home/usr1cv8 1c-server1:latest
+
+
 Затем создав базу останавливать  :
 
 $ docker stop 1c-server1
